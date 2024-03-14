@@ -41,23 +41,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     blob.style.top = `${y * 30}vh`;
   });
 
-  // Dark Mode
-
-  document.getElementById('dark-mode-toggle').addEventListener('click', function() {
-    document.body.classList.toggle('dark-mode');
-
-    var moonIcon = document.getElementById('moon-icon');
-    var brightnessIcon = document.getElementById('brightness-icon');
-
-    if (document.body.classList.contains('dark-mode')) {
-      moonIcon.style.display = 'none';
-      brightnessIcon.style.display = '';
-    } else {
-      moonIcon.style.display = '';
-      brightnessIcon.style.display = 'none';
-    }
-  });
-
 
   // Scrolling Animation
 

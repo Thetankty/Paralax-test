@@ -84,25 +84,6 @@ a {
   font-weight: 700;
 }
 
-#dark-mode-toggle {
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-  color: var(--text);
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  border-radius: 12px;
-}
-
-#dark-mode-toggle i {
-  margin-right: 5px;
-  cursor: pointer;
-}
-
 .NavList {
   display: flex;
   list-style: none;
