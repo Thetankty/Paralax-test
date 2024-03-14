@@ -167,21 +167,26 @@ a {
 
 /* About */
 
-.AboutImage {
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
 .AboutContent {
   display: flex;
   align-items: center;
   gap: 40px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .AboutText {
-  flex: 1;
+  flex: 1 1 50%; /* Occupy at least 50% of the available width */
+  max-width: 800px; /* Set a maximum width for the text */
   overflow: hidden;
+}
+
+.AboutImage {
+  flex: 0 0 auto; /* Prevent the image from growing or shrinking */
+  max-width: 400px; /* Set a maximum width for the image */
+  width: 100%; /* Ensure the image takes up the full available width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .AboutDescription {
@@ -360,14 +365,13 @@ a {
  }
 
  .AboutContent {
-   text-align: left;
- }
+  flex-direction: column; /* Stack the text and image vertically on smaller screens */
+  gap: 20px;
+}
 
- .AboutContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+.AboutText,
+.AboutImage {
+  max-width: 100%; /* Allow the text and image to take up the full width */
 }
 
 .AboutDescription {
