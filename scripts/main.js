@@ -59,3 +59,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   aboutDescriptions.forEach(description => {
     observer.observe(description);
   });
+

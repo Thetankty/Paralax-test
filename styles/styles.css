@@ -33,12 +33,7 @@ body {
   font-family: var(--font);
   color: var(--text);
   line-height: 1.5;
-}
-
-body.dark-mode {
-  --primary: var(--primary-dark);
-  --secondary: var(--secondary-dark);
-  --text: var(--text-dark);
+  overflow-x: hidden;
 }
 
 a {
@@ -236,6 +231,16 @@ a {
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  transition: filter 300ms;
+}
+
+.PortfolioItem:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+.PortfolioContainer:has(.PortfolioItem:hover) .PortfolioItem:not(:hover) {
+  filter: brightness(0.5);
 }
 
 .PortfolioImage {
