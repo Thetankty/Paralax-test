@@ -44,23 +44,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
   // Scrolling Animation
 
-  window.addEventListener('scroll', function() {
-    const aboutDescriptions = document.querySelectorAll('.AboutDescription');
-    const aboutSection = document.querySelector('.SectionAbout');
-    const sectionTop = aboutSection.offsetTop - window.innerHeight * 0.8;
-    const sectionBottom = sectionTop + aboutSection.offsetHeight;
-    const currentScroll = window.pageYOffset;
+  const aboutDescriptions = document.querySelectorAll('.AboutDescription');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, { threshold: 0.5 }); // Adjust the threshold value as needed
   
-    if (currentScroll >= sectionTop && currentScroll < sectionBottom) {
-      aboutDescriptions.forEach((description, index) => {
-        const delay = index * 0.3; // Adjust the delay between paragraphs
-        setTimeout(() => {
-          description.classList.add('visible');
-        }, delay * 1000);
-      });
-    } else {
-      aboutDescriptions.forEach(description => {
-        description.classList.remove('visible');
-      });
-    }
+  aboutDescriptions.forEach(description => {
+    observer.observe(description);
   });
